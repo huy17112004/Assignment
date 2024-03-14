@@ -121,11 +121,14 @@ void them_gd_chi_tieu(){
     if (save) luu_dmct();
 }
 void cap_nhat_gd_chi_tieu() {
-    int i;
-    printf("Danh sach cac giao dich chi tieu:\n");
-    for (i = 0; i < so_ct; i++) {
-        printf("%d. %s\n", i + 1, chi_tieu[i].danh_muc);
-    }
+    printf("+------------------------------------+\n");
+	printf("| Danh sach cac giao dich chi tieu   |\n");
+	printf("+------------------------------------+\n");
+	int i;
+	for (i = 0; i < so_ct; i++) {
+    	printf("| %-2d. %-30s |\n", i + 1, chi_tieu[i].danh_muc);
+	}
+	printf("+------------------------------------+\n");
     int choice;
     printf("Nhap so thu tu cua giao dich can cap nhat: ");
     scanf("%d", &choice);
@@ -158,11 +161,14 @@ void cap_nhat_gd_chi_tieu() {
     printf("Da cap nhat giao dich thanh cong!\n");
 }
 void xoa_gd_chi_tieu() {
-    int i;
-    printf("Danh sach cac giao dich chi tieu:\n");
-    for (i = 0; i < so_ct; i++) {
-        printf("%d. %s\n", i + 1, chi_tieu[i].danh_muc);
-    }
+    printf("+------------------------------------+\n");
+	printf("|  Danh sach cac giao dich chi tieu  |\n");
+	printf("+------------------------------------+\n");
+	int i;
+	for (i = 0; i < so_ct; i++) {
+	    printf("| %-2d. %-30s |\n", i + 1, chi_tieu[i].danh_muc);
+	}
+	printf("+------------------------------------+\n");
     int choice;
     printf("Nhap so thu tu cua giao dich can xoa: ");
     scanf("%d", &choice);
@@ -216,9 +222,13 @@ void luu_dmct(){
 }
 void chon_danh_muc_ct(){
 	int i;
-	for (i = 0; i < so_dmct; i++){
-		printf("%d. %s\n", i + 1, danh_muc_chi_tieu[i]);
+	printf("+-------------------------+\n");
+	printf("|   Cac danh muc da luu   |\n");
+	printf("+-------------------------+\n");
+	for (i = 0; i < so_dmct; i++) {
+	    printf("| %-2d. %-19s |\n", i + 1, danh_muc_chi_tieu[i]);
 	}
+	printf("+-------------------------+\n");
 	int choice;
 	printf("Nhap lua chon cua ban: ");
 	scanf("%d", &choice);
@@ -303,13 +313,17 @@ void them_gd_thu_nhap(){
 }
 void cap_nhat_gd_thu_nhap() {
     int i;
-    printf("Danh sach cac giao dich thu nhap:\n");
-    for (i = 0; i < so_tn; i++) {
-        printf("%d. %s\n", i + 1, thu_nhap[i].danh_muc);
-    }
-    int choice;
-    printf("Nhap so thu tu cua giao dich can cap nhat: ");
-    scanf("%d", &choice);
+    printf("+-------------------------------------+\n");
+	printf("|  Danh sach cac giao dich thu nhap   |\n");
+	printf("+-------------------------------------+\n");
+	for (i = 0; i < so_tn; i++) {
+    	printf("| %-2d. %-31s |\n", i + 1, thu_nhap[i].danh_muc);
+	}
+	printf("+-------------------------------------+\n");
+	int choice;
+	printf("Nhap so thu tu cua giao dich can cap nhat: ");
+	scanf("%d", &choice);
+
     if (choice <= 0 || choice > so_tn) {
         printf("Lua chon khong hop le!\n");
         return;
@@ -340,10 +354,13 @@ void cap_nhat_gd_thu_nhap() {
 }
 void xoa_gd_thu_nhap() {
     int i;
-    printf("Danh sach cac giao dich thu nhap:\n");
-    for (i = 0; i < so_tn; i++) {
-        printf("%d. %s\n", i + 1, thu_nhap[i].danh_muc);
-    }
+    printf("+------------------------------------+\n");
+	printf("|  Danh sach cac giao dich thu nhap  |\n");
+	printf("+------------------------------------+\n");
+	for (i = 0; i < so_tn; i++) {
+	    printf("| %-2d. %-30s |\n", i + 1, thu_nhap[i].danh_muc);
+	}
+	printf("+------------------------------------+\n");
     int choice;
     printf("Nhap so thu tu cua giao dich can xoa: ");
     scanf("%d", &choice);
@@ -397,9 +414,13 @@ void luu_dmtn(){
 }
 void chon_danh_muc_tn(){
 	int i;
-	for (i = 0; i < so_dmtn; i++){
-		printf("%d. %s\n", i + 1, danh_muc_thu_nhap[i]);
+	printf("+-------------------------+\n");
+	printf("|   Cac danh muc da luu   |\n");
+	printf("+-------------------------+\n");
+	for (i = 0; i < so_dmtn; i++) {
+	    printf("| %-2d. %-19s |\n", i + 1, danh_muc_thu_nhap[i]);
 	}
+	printf("+-------------------------+\n");
 	int choice;
 	printf("Nhap lua chon cua ban: ");
 	scanf("%d", &choice);
@@ -464,7 +485,6 @@ void tinh_tai_san_rong() {
     }
     float tai_san_rong = tong_thu_nhap - tong_chi_tieu;
     printf("Tai san rong cua ban la: %.2f\n", tai_san_rong);
-    printf("\nNhan Enter de tiep tuc...");
     while (getchar() != '\n');
     getchar();
 }
@@ -493,11 +513,14 @@ void phan_tich_chi_tieu() {
             so_phan_tich++;
         }
     }
-    printf("Phan tich chi tieu theo danh muc:\n");
+    printf("+----------------------------------------------+\n");
+    printf("|      Phan tich chi tieu theo danh muc        |\n");
+    printf("+----------------------------------------------+\n");
     for (i = 0; i < so_phan_tich; ++i) {
-        printf("Danh muc: %s, Tong chi: %.2f\n", phan_tich[i].danh_muc, phan_tich[i].tong_chi);
+        printf("| Danh muc: %-34s |\n", phan_tich[i].danh_muc);
+        printf("| Tong chi: %-34.2f |\n", phan_tich[i].tong_chi);
+        printf("+----------------------------------------------+\n");
     }
-    printf("\nNhan Enter de tiep tuc...");
     while (getchar() != '\n');
     getchar();
 }
@@ -528,10 +551,12 @@ scanf("%d", &lua_chon);
         switch (lua_chon) {
             case 1:{
             	int choice1;
-            	printf("1. Thu nhap moi\n");
-                printf("2. Thu nhap da luu\n");
-                printf("0. Quay lai\n");
-                printf("Nhap lua chon: ");
+            	printf("+------------------------------------------+\n");
+				printf("|  1. Thu nhap moi                         |\n");
+				printf("|  2. Thu nhap da luu                      |\n");
+				printf("|  0. Quay lai                             |\n");
+				printf("+------------------------------------------+\n");
+				printf("Nhap lua chon: ");
                 scanf("%d", &choice1);
                 switch(choice1){
                 	case 1:{
@@ -563,11 +588,16 @@ scanf("%d", &lua_chon);
 			}
             case 4:{
             	int choice2;
-            	printf("1. Chi tieu moi\n");
-                printf("2. Chi tieu da luu\n");
-                printf("0. Quay lai\n");
-                printf("Nhap lua chon: ");
-                scanf("%d", &choice2);
+            	printf("+------------------------+\n");
+				printf("|         Lua Chon       |\n");
+				printf("+------------------------+\n");
+				printf("| 1. Chi tieu moi        |\n");
+				printf("| 2. Chi tieu da luu     |\n");
+				printf("| 0. Quay lai            |\n");
+				printf("+------------------------+\n");
+				printf("Nhap lua chon: ");
+				scanf("%d", &choice2);
+
                 switch(choice2){
                 	case 1:{
                 		them_gd_chi_tieu();
@@ -621,4 +651,3 @@ scanf("%d", &lua_chon);
 
     return 0;
 }
-
